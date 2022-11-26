@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.poppins().fontFamily,
         textTheme: const TextTheme(
           bodyText1: TextStyle(color: bodyTextColor),
-          bodyText2: TextStyle(color: kWhiteColor),
+          bodyText2: TextStyle(color: bodyTextColor),
         ),
       ),
       home: ScreenMainPage(),
