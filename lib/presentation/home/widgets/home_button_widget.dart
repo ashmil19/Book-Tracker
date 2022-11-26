@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 class HomeButtonWidget extends StatelessWidget {
   final String text;
   final int count;
+  final onPressed;
   const HomeButtonWidget({
     Key? key,
     required this.text,
     required this.count,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -24,6 +26,7 @@ class HomeButtonWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(50),
           ),
         ),
+        onPressed: onPressed,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -41,10 +44,9 @@ class HomeButtonWidget extends StatelessWidget {
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),
-            )
+            ),
           ],
         ),
-        onPressed: () {},
       ),
     );
   }
