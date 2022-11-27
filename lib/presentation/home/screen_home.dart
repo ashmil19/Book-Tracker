@@ -1,4 +1,6 @@
 import 'package:book_tracker/core/constants.dart';
+import 'package:book_tracker/presentation/home/widgets/currently_reading.dart';
+import 'package:book_tracker/presentation/home/widgets/finished.dart';
 import 'package:book_tracker/presentation/home/widgets/home_button_widget.dart';
 import 'package:book_tracker/presentation/home/widgets/to_read.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,7 @@ class ScreenHome extends StatelessWidget {
           children: [
             HomeButtonWidget(
               text: "To Read",
-              count: 8,
+              count: 15,
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -31,13 +33,25 @@ class ScreenHome extends StatelessWidget {
             HomeButtonWidget(
               text: "Currently Reading",
               count: 3,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const CurrentlyReading(),
+                  ),
+                );
+              },
             ),
             kHeight20,
             HomeButtonWidget(
               text: "Finished",
-              count: 7,
-              onPressed: () {},
+              count: 13,
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const Finished(),
+                  ),
+                );
+              },
             ),
           ],
         ),
