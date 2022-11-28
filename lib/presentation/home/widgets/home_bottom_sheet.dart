@@ -1,6 +1,6 @@
 import 'package:book_tracker/core/colors.dart';
 import 'package:book_tracker/core/constants.dart';
-import 'package:book_tracker/presentation/home/widgets/status_circle_selection_widget.dart';
+import 'package:book_tracker/presentation/home/widgets/circle_radio_widget.dart';
 import 'package:book_tracker/presentation/widgets/bottom_sheet_button_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +22,14 @@ Future<dynamic> HomeBottomSheet(BuildContext context) {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            StatusCircleSelectionWidget(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CircleRadioWidget(text1: "To Read"),
+                CircleRadioWidget(text1: "Currently", text2: "Reading"),
+                CircleRadioWidget(text1: "Finished"),
+              ],
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

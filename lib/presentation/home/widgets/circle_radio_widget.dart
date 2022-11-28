@@ -2,28 +2,10 @@ import 'package:book_tracker/core/colors.dart';
 import 'package:book_tracker/core/constants.dart';
 import 'package:flutter/material.dart';
 
-class StatusCircleSelectionWidget extends StatelessWidget {
-  const StatusCircleSelectionWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        CircleWidget(text1: "To Read"),
-        CircleWidget(text1: "Currently", text2: "Reading"),
-        CircleWidget(text1: "Finished"),
-      ],
-    );
-  }
-}
-
-class CircleWidget extends StatelessWidget {
+class CircleRadioWidget extends StatelessWidget {
   final String text1;
   String? text2;
-  CircleWidget({
+  CircleRadioWidget({
     Key? key,
     required this.text1,
     this.text2,
