@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 class AppbarWidget extends StatelessWidget {
   final String text;
-  const AppbarWidget({
+  bool isBackButton;
+  AppbarWidget({
     Key? key,
     required this.text,
+    this.isBackButton = true,
   }) : super(key: key);
 
   @override
@@ -17,10 +19,12 @@ class AppbarWidget extends StatelessWidget {
         style: const TextStyle(fontSize: 24),
       ),
       centerTitle: true,
-      leading: IconButton(
-        onPressed: () => Navigator.of(context).pop(),
-        icon: const Icon(Icons.arrow_back),
-      ),
+      leading: isBackButton
+          ? IconButton(
+              onPressed: () => Navigator.of(context).pop(),
+              icon: const Icon(Icons.arrow_back),
+            )
+          : Container(),
     );
   }
 }

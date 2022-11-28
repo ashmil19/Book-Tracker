@@ -16,13 +16,11 @@ class ScreenMainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: ValueListenableBuilder(
-            valueListenable: indexNotifier,
-            builder: (context, index, _) {
-              return _pages[index];
-            }),
-      ),
+      body: ValueListenableBuilder(
+          valueListenable: indexNotifier,
+          builder: (context, index, _) {
+            return _pages[index];
+          }),
       bottomNavigationBar: const BottomNavigationWidget(),
     );
   }

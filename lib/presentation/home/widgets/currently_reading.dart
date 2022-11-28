@@ -10,7 +10,7 @@ class CurrentlyReading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
+      appBar: PreferredSize(
         preferredSize: Size.fromHeight(55),
         child: AppbarWidget(
           text: "Currently Reading",
