@@ -22,18 +22,45 @@ Future<dynamic> HomeBottomSheet(BuildContext context) {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CircleRadioWidget(text1: "To Read"),
-                CircleRadioWidget(text1: "Currently", text2: "Reading"),
-                CircleRadioWidget(text1: "Finished"),
-              ],
-            ),
+            ValueListenableBuilder(
+                valueListenable: seletectedIndex,
+                builder: (context, newindex, _) {
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CircleRadioWidget(
+                        text1: "To Read",
+                        index: 1,
+                        onTap: () {
+                          seletectedIndex.value = 1;
+                        },
+                      ),
+                      CircleRadioWidget(
+                        text1: "Currently",
+                        text2: "Reading",
+                        index: 2,
+                        onTap: () {
+                          seletectedIndex.value = 2;
+                        },
+                      ),
+                      CircleRadioWidget(
+                        text1: "Finished",
+                        index: 3,
+                        onTap: () {
+                          seletectedIndex.value = 3;
+                        },
+                      ),
+                    ],
+                  );
+                }),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                BottomSheetButtonWidget(text: "Save", onPressed: () {}),
+                BottomSheetButtonWidget(
+                    text: "Save",
+                    onPressed: () {
+                      print(seletectedIndex.value);
+                    }),
                 BottomSheetButtonWidget(
                   text: "Cancel",
                   onPressed: () {
