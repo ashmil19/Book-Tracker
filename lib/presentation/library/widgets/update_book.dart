@@ -3,6 +3,7 @@ import 'package:book_tracker/core/constants.dart';
 import 'package:book_tracker/presentation/library/screen_library.dart';
 import 'package:book_tracker/presentation/library/widgets/library_button_widget.dart';
 import 'package:book_tracker/presentation/library/widgets/text_form_field_widget.dart';
+import 'package:book_tracker/presentation/main_page/screen_main_page.dart';
 import 'package:flutter/material.dart';
 
 class UpdateBook extends StatelessWidget {
@@ -46,7 +47,7 @@ class UpdateBook extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                          builder: (context) => const ScreenLibrary(),
+                          builder: (context) => ScreenMainPage(),
                         ),
                       );
                     },
