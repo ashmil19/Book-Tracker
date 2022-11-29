@@ -1,11 +1,10 @@
 import 'package:book_tracker/core/colors.dart';
 import 'package:book_tracker/core/constants.dart';
 import 'package:book_tracker/presentation/library/widgets/add_book.dart';
+import 'package:book_tracker/presentation/library/widgets/library_bottom_sheet.dart';
 import 'package:book_tracker/presentation/widgets/appbar_widget.dart';
 import 'package:book_tracker/presentation/widgets/book_tile_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ScreenLibrary extends StatelessWidget {
   const ScreenLibrary({super.key});
@@ -22,7 +21,9 @@ class ScreenLibrary extends StatelessWidget {
       ),
       body: ListView.separated(
         padding: const EdgeInsets.all(20),
-        itemBuilder: (context, index) => BookTileWidget(onTap: () {}),
+        itemBuilder: (context, index) => BookTileWidget(
+          onTap: () => LibraryBottomSheet(context),
+        ),
         separatorBuilder: (context, index) => kHeight20,
         itemCount: 15,
       ),
@@ -34,7 +35,7 @@ class ScreenLibrary extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => const AddBook(),
+                builder: (context) => AddBook(),
               ),
             );
           },

@@ -1,11 +1,12 @@
 import 'package:book_tracker/core/colors.dart';
 import 'package:book_tracker/core/constants.dart';
+import 'package:book_tracker/presentation/library/screen_library.dart';
 import 'package:book_tracker/presentation/library/widgets/library_button_widget.dart';
 import 'package:book_tracker/presentation/library/widgets/text_form_field_widget.dart';
 import 'package:flutter/material.dart';
 
-class AddBook extends StatelessWidget {
-  AddBook({super.key});
+class UpdateBook extends StatelessWidget {
+  UpdateBook({super.key});
 
   final _bookNameController = TextEditingController();
   final _authorNameController = TextEditingController();
@@ -34,7 +35,7 @@ class AddBook extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   LibraryButtonWidget(
-                    text: "Add",
+                    text: "Update",
                     onPressed: () {
                       print(_bookNameController.text);
                       print(_authorNameController.text);
@@ -43,7 +44,11 @@ class AddBook extends StatelessWidget {
                   LibraryButtonWidget(
                     text: "Back",
                     onPressed: () {
-                      Navigator.of(context).pop();
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const ScreenLibrary(),
+                        ),
+                      );
                     },
                   ),
                 ],
