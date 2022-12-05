@@ -1,5 +1,4 @@
 import 'package:book_tracker/core/colors.dart';
-import 'package:book_tracker/core/constants.dart';
 import 'package:book_tracker/presentation/home/widgets/circle_radio_widget.dart';
 import 'package:book_tracker/presentation/widgets/bottom_sheet_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +25,12 @@ Future<dynamic> HomeBottomSheet(BuildContext context) {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                BottomSheetButtonWidget(text: "Save", onPressed: () {}),
+                BottomSheetButtonWidget(
+                  text: "Save",
+                  onPressed: () {
+                    print(selectedStatus);
+                  },
+                ),
                 BottomSheetButtonWidget(
                   text: "Cancel",
                   onPressed: () {
