@@ -19,6 +19,8 @@ class Finished extends StatelessWidget {
       body: ListView.separated(
         padding: const EdgeInsets.all(20),
         itemBuilder: (context, index) => BookTileWidget(
+          authorName: 'test book',
+          bookName: 'test author',
           onTap: () => HomeBottomSheet(context),
         ),
         separatorBuilder: (context, index) => kHeight20,

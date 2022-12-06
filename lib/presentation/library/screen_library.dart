@@ -1,3 +1,4 @@
+import 'package:book_tracker/application/library/library_bloc.dart';
 import 'package:book_tracker/core/colors.dart';
 import 'package:book_tracker/core/constants.dart';
 import 'package:book_tracker/presentation/library/widgets/add_book.dart';
@@ -5,12 +6,16 @@ import 'package:book_tracker/presentation/library/widgets/library_bottom_sheet.d
 import 'package:book_tracker/presentation/widgets/appbar_widget.dart';
 import 'package:book_tracker/presentation/widgets/book_tile_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ScreenLibrary extends StatelessWidget {
   const ScreenLibrary({super.key});
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<LibraryBloc>().add(const GetAllBooksEvent());
+    });
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(55),
@@ -19,13 +24,31 @@ class ScreenLibrary extends StatelessWidget {
           isBackButton: false,
         ),
       ),
-      body: ListView.separated(
-        padding: const EdgeInsets.all(20),
-        itemBuilder: (context, index) => BookTileWidget(
-          onTap: () => LibraryBottomSheet(context),
-        ),
-        separatorBuilder: (context, index) => kHeight20,
-        itemCount: 15,
+      body: BlocBuilder<LibraryBloc, LibraryState>(
+        builder: (context, state) {
+          return state.onLoading
+              ? const Center(child: CircularProgressIndicator(strokeWidth: 2))
+              : state.bookList.isEmpty
+                  ? const Center(
+                      child: Text(
+                        "No Books Added",
+                        style: TextStyle(
+                          color: defaultColor,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    )
+                  : ListView.separated(
+                      padding: const EdgeInsets.all(20),
+                      itemBuilder: (context, index) => BookTileWidget(
+                        bookName: state.bookList[index].bookName,
+                        authorName: state.bookList[index].authorName,
+                        onTap: () => LibraryBottomSheet(context),
+                      ),
+                      separatorBuilder: (context, index) => kHeight20,
+                      itemCount: state.bookList.length,
+                    );
+        },
       ),
       floatingActionButton: SizedBox(
         height: 70,

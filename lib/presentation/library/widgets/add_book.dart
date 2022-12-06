@@ -46,6 +46,10 @@ class AddBook extends StatelessWidget {
                               bookName: _bookName,
                               authorName: _authorName,
                             ));
+                        context
+                            .read<LibraryBloc>()
+                            .add(const GetAllBooksEvent());
+                        Navigator.of(context).pop();
                       }
                     },
                   ),

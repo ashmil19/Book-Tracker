@@ -6,4 +6,5 @@ class LibraryEvent with _$LibraryEvent {
     required String bookName,
     required String authorName,
   }) = AddBookEvent;
+  const factory LibraryEvent.getAllBooksEvent() = GetAllBooksEvent;
 }

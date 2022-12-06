@@ -4,9 +4,13 @@ import 'package:flutter/material.dart';
 
 class BookTileWidget extends StatelessWidget {
   final onTap;
+  final String bookName;
+  final String authorName;
   const BookTileWidget({
     Key? key,
     required this.onTap,
+    required this.bookName,
+    required this.authorName,
   }) : super(key: key);
 
   @override
@@ -23,20 +27,20 @@ class BookTileWidget extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Text(
-                "Rich dad and poor dad",
+                bookName,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               kHeight5,
               Text(
-                "Robert kiyosaki",
+                authorName,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
