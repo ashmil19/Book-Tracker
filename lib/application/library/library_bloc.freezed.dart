@@ -20,18 +20,30 @@ mixin _$LibraryEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String bookName, String authorName) addBookEvent,
     required TResult Function() getAllBooksEvent,
+    required TResult Function(int id) deleteBookEvent,
+    required TResult Function(int id, String updateBookName,
+            String updateAuthorName, BookStatus bookStatus)
+        updateBookEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String bookName, String authorName)? addBookEvent,
     TResult? Function()? getAllBooksEvent,
+    TResult? Function(int id)? deleteBookEvent,
+    TResult? Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String bookName, String authorName)? addBookEvent,
     TResult Function()? getAllBooksEvent,
+    TResult Function(int id)? deleteBookEvent,
+    TResult Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +51,24 @@ mixin _$LibraryEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(AddBookEvent value) addBookEvent,
     required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
+    required TResult Function(DeleteBookEvent value) deleteBookEvent,
+    required TResult Function(UpdateBookEvent value) updateBookEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AddBookEvent value)? addBookEvent,
     TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult? Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult? Function(UpdateBookEvent value)? updateBookEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddBookEvent value)? addBookEvent,
     TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult Function(UpdateBookEvent value)? updateBookEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -150,6 +168,10 @@ class _$AddBookEvent implements AddBookEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String bookName, String authorName) addBookEvent,
     required TResult Function() getAllBooksEvent,
+    required TResult Function(int id) deleteBookEvent,
+    required TResult Function(int id, String updateBookName,
+            String updateAuthorName, BookStatus bookStatus)
+        updateBookEvent,
   }) {
     return addBookEvent(bookName, authorName);
   }
@@ -159,6 +181,10 @@ class _$AddBookEvent implements AddBookEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String bookName, String authorName)? addBookEvent,
     TResult? Function()? getAllBooksEvent,
+    TResult? Function(int id)? deleteBookEvent,
+    TResult? Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
   }) {
     return addBookEvent?.call(bookName, authorName);
   }
@@ -168,6 +194,10 @@ class _$AddBookEvent implements AddBookEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String bookName, String authorName)? addBookEvent,
     TResult Function()? getAllBooksEvent,
+    TResult Function(int id)? deleteBookEvent,
+    TResult Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
     required TResult orElse(),
   }) {
     if (addBookEvent != null) {
@@ -181,6 +211,8 @@ class _$AddBookEvent implements AddBookEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(AddBookEvent value) addBookEvent,
     required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
+    required TResult Function(DeleteBookEvent value) deleteBookEvent,
+    required TResult Function(UpdateBookEvent value) updateBookEvent,
   }) {
     return addBookEvent(this);
   }
@@ -190,6 +222,8 @@ class _$AddBookEvent implements AddBookEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AddBookEvent value)? addBookEvent,
     TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult? Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult? Function(UpdateBookEvent value)? updateBookEvent,
   }) {
     return addBookEvent?.call(this);
   }
@@ -199,6 +233,8 @@ class _$AddBookEvent implements AddBookEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddBookEvent value)? addBookEvent,
     TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult Function(UpdateBookEvent value)? updateBookEvent,
     required TResult orElse(),
   }) {
     if (addBookEvent != null) {
@@ -260,6 +296,10 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String bookName, String authorName) addBookEvent,
     required TResult Function() getAllBooksEvent,
+    required TResult Function(int id) deleteBookEvent,
+    required TResult Function(int id, String updateBookName,
+            String updateAuthorName, BookStatus bookStatus)
+        updateBookEvent,
   }) {
     return getAllBooksEvent();
   }
@@ -269,6 +309,10 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String bookName, String authorName)? addBookEvent,
     TResult? Function()? getAllBooksEvent,
+    TResult? Function(int id)? deleteBookEvent,
+    TResult? Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
   }) {
     return getAllBooksEvent?.call();
   }
@@ -278,6 +322,10 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String bookName, String authorName)? addBookEvent,
     TResult Function()? getAllBooksEvent,
+    TResult Function(int id)? deleteBookEvent,
+    TResult Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
     required TResult orElse(),
   }) {
     if (getAllBooksEvent != null) {
@@ -291,6 +339,8 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(AddBookEvent value) addBookEvent,
     required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
+    required TResult Function(DeleteBookEvent value) deleteBookEvent,
+    required TResult Function(UpdateBookEvent value) updateBookEvent,
   }) {
     return getAllBooksEvent(this);
   }
@@ -300,6 +350,8 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AddBookEvent value)? addBookEvent,
     TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult? Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult? Function(UpdateBookEvent value)? updateBookEvent,
   }) {
     return getAllBooksEvent?.call(this);
   }
@@ -309,6 +361,8 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddBookEvent value)? addBookEvent,
     TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult Function(UpdateBookEvent value)? updateBookEvent,
     required TResult orElse(),
   }) {
     if (getAllBooksEvent != null) {
@@ -320,6 +374,352 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
 
 abstract class GetAllBooksEvent implements LibraryEvent {
   const factory GetAllBooksEvent() = _$GetAllBooksEvent;
+}
+
+/// @nodoc
+abstract class _$$DeleteBookEventCopyWith<$Res> {
+  factory _$$DeleteBookEventCopyWith(
+          _$DeleteBookEvent value, $Res Function(_$DeleteBookEvent) then) =
+      __$$DeleteBookEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$DeleteBookEventCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$DeleteBookEvent>
+    implements _$$DeleteBookEventCopyWith<$Res> {
+  __$$DeleteBookEventCopyWithImpl(
+      _$DeleteBookEvent _value, $Res Function(_$DeleteBookEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$DeleteBookEvent(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteBookEvent implements DeleteBookEvent {
+  const _$DeleteBookEvent({required this.id});
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'LibraryEvent.deleteBookEvent(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteBookEvent &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteBookEventCopyWith<_$DeleteBookEvent> get copyWith =>
+      __$$DeleteBookEventCopyWithImpl<_$DeleteBookEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String bookName, String authorName) addBookEvent,
+    required TResult Function() getAllBooksEvent,
+    required TResult Function(int id) deleteBookEvent,
+    required TResult Function(int id, String updateBookName,
+            String updateAuthorName, BookStatus bookStatus)
+        updateBookEvent,
+  }) {
+    return deleteBookEvent(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String bookName, String authorName)? addBookEvent,
+    TResult? Function()? getAllBooksEvent,
+    TResult? Function(int id)? deleteBookEvent,
+    TResult? Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
+  }) {
+    return deleteBookEvent?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String bookName, String authorName)? addBookEvent,
+    TResult Function()? getAllBooksEvent,
+    TResult Function(int id)? deleteBookEvent,
+    TResult Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
+    required TResult orElse(),
+  }) {
+    if (deleteBookEvent != null) {
+      return deleteBookEvent(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddBookEvent value) addBookEvent,
+    required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
+    required TResult Function(DeleteBookEvent value) deleteBookEvent,
+    required TResult Function(UpdateBookEvent value) updateBookEvent,
+  }) {
+    return deleteBookEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddBookEvent value)? addBookEvent,
+    TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult? Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult? Function(UpdateBookEvent value)? updateBookEvent,
+  }) {
+    return deleteBookEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddBookEvent value)? addBookEvent,
+    TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult Function(UpdateBookEvent value)? updateBookEvent,
+    required TResult orElse(),
+  }) {
+    if (deleteBookEvent != null) {
+      return deleteBookEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteBookEvent implements LibraryEvent {
+  const factory DeleteBookEvent({required final int id}) = _$DeleteBookEvent;
+
+  int get id;
+  @JsonKey(ignore: true)
+  _$$DeleteBookEventCopyWith<_$DeleteBookEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateBookEventCopyWith<$Res> {
+  factory _$$UpdateBookEventCopyWith(
+          _$UpdateBookEvent value, $Res Function(_$UpdateBookEvent) then) =
+      __$$UpdateBookEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {int id,
+      String updateBookName,
+      String updateAuthorName,
+      BookStatus bookStatus});
+}
+
+/// @nodoc
+class __$$UpdateBookEventCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$UpdateBookEvent>
+    implements _$$UpdateBookEventCopyWith<$Res> {
+  __$$UpdateBookEventCopyWithImpl(
+      _$UpdateBookEvent _value, $Res Function(_$UpdateBookEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? updateBookName = null,
+    Object? updateAuthorName = null,
+    Object? bookStatus = null,
+  }) {
+    return _then(_$UpdateBookEvent(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      updateBookName: null == updateBookName
+          ? _value.updateBookName
+          : updateBookName // ignore: cast_nullable_to_non_nullable
+              as String,
+      updateAuthorName: null == updateAuthorName
+          ? _value.updateAuthorName
+          : updateAuthorName // ignore: cast_nullable_to_non_nullable
+              as String,
+      bookStatus: null == bookStatus
+          ? _value.bookStatus
+          : bookStatus // ignore: cast_nullable_to_non_nullable
+              as BookStatus,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateBookEvent implements UpdateBookEvent {
+  const _$UpdateBookEvent(
+      {required this.id,
+      required this.updateBookName,
+      required this.updateAuthorName,
+      required this.bookStatus});
+
+  @override
+  final int id;
+  @override
+  final String updateBookName;
+  @override
+  final String updateAuthorName;
+  @override
+  final BookStatus bookStatus;
+
+  @override
+  String toString() {
+    return 'LibraryEvent.updateBookEvent(id: $id, updateBookName: $updateBookName, updateAuthorName: $updateAuthorName, bookStatus: $bookStatus)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateBookEvent &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.updateBookName, updateBookName) ||
+                other.updateBookName == updateBookName) &&
+            (identical(other.updateAuthorName, updateAuthorName) ||
+                other.updateAuthorName == updateAuthorName) &&
+            (identical(other.bookStatus, bookStatus) ||
+                other.bookStatus == bookStatus));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, updateBookName, updateAuthorName, bookStatus);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateBookEventCopyWith<_$UpdateBookEvent> get copyWith =>
+      __$$UpdateBookEventCopyWithImpl<_$UpdateBookEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String bookName, String authorName) addBookEvent,
+    required TResult Function() getAllBooksEvent,
+    required TResult Function(int id) deleteBookEvent,
+    required TResult Function(int id, String updateBookName,
+            String updateAuthorName, BookStatus bookStatus)
+        updateBookEvent,
+  }) {
+    return updateBookEvent(id, updateBookName, updateAuthorName, bookStatus);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String bookName, String authorName)? addBookEvent,
+    TResult? Function()? getAllBooksEvent,
+    TResult? Function(int id)? deleteBookEvent,
+    TResult? Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
+  }) {
+    return updateBookEvent?.call(
+        id, updateBookName, updateAuthorName, bookStatus);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String bookName, String authorName)? addBookEvent,
+    TResult Function()? getAllBooksEvent,
+    TResult Function(int id)? deleteBookEvent,
+    TResult Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
+    required TResult orElse(),
+  }) {
+    if (updateBookEvent != null) {
+      return updateBookEvent(id, updateBookName, updateAuthorName, bookStatus);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddBookEvent value) addBookEvent,
+    required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
+    required TResult Function(DeleteBookEvent value) deleteBookEvent,
+    required TResult Function(UpdateBookEvent value) updateBookEvent,
+  }) {
+    return updateBookEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddBookEvent value)? addBookEvent,
+    TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult? Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult? Function(UpdateBookEvent value)? updateBookEvent,
+  }) {
+    return updateBookEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddBookEvent value)? addBookEvent,
+    TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult Function(UpdateBookEvent value)? updateBookEvent,
+    required TResult orElse(),
+  }) {
+    if (updateBookEvent != null) {
+      return updateBookEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateBookEvent implements LibraryEvent {
+  const factory UpdateBookEvent(
+      {required final int id,
+      required final String updateBookName,
+      required final String updateAuthorName,
+      required final BookStatus bookStatus}) = _$UpdateBookEvent;
+
+  int get id;
+  String get updateBookName;
+  String get updateAuthorName;
+  BookStatus get bookStatus;
+  @JsonKey(ignore: true)
+  _$$UpdateBookEventCopyWith<_$UpdateBookEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

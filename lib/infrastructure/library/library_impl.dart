@@ -22,4 +22,16 @@ class LibraryImplementation implements LibraryService {
     final bookList = bookDB.values.toList();
     return bookList;
   }
+
+  @override
+  Future<void> deleteBook({required int id}) async {
+    final bookDB = await Hive.openBox<BookModel>(dbName);
+    await bookDB.delete(id);
+  }
+
+  @override
+  Future<void> updateBook({required BookModel bookModel}) async {
+    final bookDB = await Hive.openBox<BookModel>(dbName);
+    await bookDB.put(bookModel.id, bookModel);
+  }
 }

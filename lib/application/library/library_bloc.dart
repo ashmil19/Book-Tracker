@@ -37,5 +37,19 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         onLoading: false,
       ));
     });
+
+    on<DeleteBookEvent>((event, emit) async {
+      await libraryService.deleteBook(id: event.id);
+    });
+
+    on<UpdateBookEvent>((event, emit) async {
+      final _updatedBook = BookModel(
+        id: event.id,
+        bookName: event.updateBookName,
+        authorName: event.updateAuthorName,
+        bookStatus: event.bookStatus,
+      );
+      await libraryService.updateBook(bookModel: _updatedBook);
+    });
   }
 }

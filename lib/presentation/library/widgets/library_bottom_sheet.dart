@@ -1,9 +1,12 @@
+import 'package:book_tracker/application/library/library_bloc.dart';
 import 'package:book_tracker/core/colors.dart';
+import 'package:book_tracker/domain/main_page/hive_models/book.dart';
 import 'package:book_tracker/presentation/library/widgets/update_book.dart';
 import 'package:book_tracker/presentation/widgets/bottom_sheet_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-Future<dynamic> LibraryBottomSheet(BuildContext context) {
+Future<dynamic> LibraryBottomSheet(BuildContext context, BookModel bookModel) {
   Size deviceSizee = MediaQuery.of(context).size;
   return showModalBottomSheet(
     backgroundColor: kBlackColor,
@@ -33,7 +36,7 @@ Future<dynamic> LibraryBottomSheet(BuildContext context) {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => UpdateBook(),
+                      builder: (context) => UpdateBook(bookModel: bookModel),
                     ),
                   );
                 },
@@ -49,7 +52,14 @@ Future<dynamic> LibraryBottomSheet(BuildContext context) {
               children: [
                 BottomSheetButtonWidget(
                   text: "Delete",
-                  onPressed: () {},
+                  onPressed: () {
+                    context
+                        .read<LibraryBloc>()
+                        .add(DeleteBookEvent(id: bookModel.id!));
+
+                    context.read<LibraryBloc>().add(const GetAllBooksEvent());
+                    Navigator.of(context).pop();
+                  },
                 ),
                 BottomSheetButtonWidget(
                   text: "Back",

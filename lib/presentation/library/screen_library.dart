@@ -1,6 +1,7 @@
 import 'package:book_tracker/application/library/library_bloc.dart';
 import 'package:book_tracker/core/colors.dart';
 import 'package:book_tracker/core/constants.dart';
+import 'package:book_tracker/domain/main_page/hive_models/book.dart';
 import 'package:book_tracker/presentation/library/widgets/add_book.dart';
 import 'package:book_tracker/presentation/library/widgets/library_bottom_sheet.dart';
 import 'package:book_tracker/presentation/widgets/appbar_widget.dart';
@@ -43,7 +44,14 @@ class ScreenLibrary extends StatelessWidget {
                       itemBuilder: (context, index) => BookTileWidget(
                         bookName: state.bookList[index].bookName,
                         authorName: state.bookList[index].authorName,
-                        onTap: () => LibraryBottomSheet(context),
+                        onTap: () => LibraryBottomSheet(
+                            context,
+                            BookModel(
+                              id: state.bookList[index].id,
+                              bookName: state.bookList[index].bookName,
+                              authorName: state.bookList[index].authorName,
+                              bookStatus: state.bookList[index].bookStatus,
+                            )),
                       ),
                       separatorBuilder: (context, index) => kHeight20,
                       itemCount: state.bookList.length,
