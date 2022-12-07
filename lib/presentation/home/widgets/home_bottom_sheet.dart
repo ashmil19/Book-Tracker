@@ -1,9 +1,12 @@
+import 'package:book_tracker/application/home/home_bloc.dart';
 import 'package:book_tracker/core/colors.dart';
+import 'package:book_tracker/domain/main_page/hive_models/book.dart';
 import 'package:book_tracker/presentation/home/widgets/circle_radio_widget.dart';
 import 'package:book_tracker/presentation/widgets/bottom_sheet_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-Future<dynamic> HomeBottomSheet(BuildContext context) {
+Future<dynamic> HomeBottomSheet(BuildContext context, BookModel bookModel) {
   Size deviceSizee = MediaQuery.of(context).size;
   return showModalBottomSheet(
     backgroundColor: kBlackColor,
@@ -21,14 +24,21 @@ Future<dynamic> HomeBottomSheet(BuildContext context) {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const CircleRadioWidget(),
+            CircleRadioWidget(
+              bookStatus: bookModel.bookStatus,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 BottomSheetButtonWidget(
                   text: "Save",
                   onPressed: () {
-                    print(selectedStatus);
+                    context.read<HomeBloc>().add(UpdateBookStatusEvent(
+                          selectedBookStatus: selectedStatus,
+                          bookModel: bookModel,
+                        ));
+                    context.read<HomeBloc>().add(GetBooksWithDiffStatusEvent());
+                    Navigator.of(context).pop();
                   },
                 ),
                 BottomSheetButtonWidget(

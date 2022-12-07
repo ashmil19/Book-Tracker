@@ -1,3 +1,4 @@
+import 'package:book_tracker/application/home/home_bloc.dart';
 import 'package:book_tracker/application/library/library_bloc.dart';
 import 'package:book_tracker/core/colors.dart';
 import 'package:book_tracker/domain/core/di/injectable.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (ctx) => getIt<LibraryBloc>()),
+        BlocProvider(create: (ctx) => getIt<HomeBloc>()),
       ],
       child: MaterialApp(
         title: 'Book Tracker',

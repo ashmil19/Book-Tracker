@@ -43,7 +43,7 @@ class ScreenLibrary extends StatelessWidget {
                       padding: const EdgeInsets.all(20),
                       itemBuilder: (context, index) => BookTileWidget(
                         bookName: state.bookList[index].bookName,
-                        authorName: state.bookList[index].authorName,
+                        authorName: state.bookList[index].authorName!,
                         onTap: () => LibraryBottomSheet(
                             context,
                             BookModel(

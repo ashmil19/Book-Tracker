@@ -40,8 +40,7 @@ class AddBook extends StatelessWidget {
                     onPressed: () {
                       final _bookName = _bookNameController.text.trim();
                       final _authorName = _authorNameController.text.trim();
-                      if (_bookNameController.text.isNotEmpty &&
-                          _authorNameController.text.isNotEmpty) {
+                      if (_bookName.isNotEmpty) {
                         context.read<LibraryBloc>().add(AddBookEvent(
                               bookName: _bookName,
                               authorName: _authorName,

@@ -37,14 +37,24 @@ class BookTileWidget extends StatelessWidget {
                 ),
               ),
               kHeight5,
-              Text(
-                authorName,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+              authorName.isNotEmpty
+                  ? Text(
+                      authorName,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    )
+                  : const Text(
+                      "Unknown",
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: kRedColor,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
             ],
           ),
         ),

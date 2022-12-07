@@ -11,14 +11,14 @@ class BookModel {
   final String bookName;
 
   @HiveField(2)
-  final String authorName;
+  String? authorName;
 
   @HiveField(3)
   final BookStatus bookStatus;
 
   BookModel({
     required this.bookName,
-    required this.authorName,
+    this.authorName,
     required this.bookStatus,
     this.id,
   });

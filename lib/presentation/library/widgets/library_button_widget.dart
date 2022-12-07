@@ -12,8 +12,9 @@ class LibraryButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size deviceSize = MediaQuery.of(context).size;
     return SizedBox(
-      width: 180,
+      width: deviceSize.width * .35,
       height: 70,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(

@@ -49,8 +49,7 @@ class UpdateBook extends StatelessWidget {
 
                       if (_bookName != bookModel.bookName &&
                               _bookName.isNotEmpty ||
-                          _authorName != bookModel.authorName &&
-                              _authorName.isNotEmpty) {
+                          _authorName != bookModel.authorName) {
                         context.read<LibraryBloc>().add(UpdateBookEvent(
                               id: bookModel.id!,
                               updateBookName: _bookName,
@@ -58,19 +57,20 @@ class UpdateBook extends StatelessWidget {
                               bookStatus: bookModel.bookStatus,
                             ));
 
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (context) => ScreenMainPage()));
+                        context
+                            .read<LibraryBloc>()
+                            .add(const GetAllBooksEvent());
+
+                        int count = 0;
+                        Navigator.of(context).popUntil((_) => count++ >= 2);
                       }
                     },
                   ),
                   LibraryButtonWidget(
                     text: "Back",
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => ScreenMainPage(),
-                        ),
-                      );
+                      int count = 0;
+                      Navigator.of(context).popUntil((_) => count++ >= 2);
                     },
                   ),
                 ],

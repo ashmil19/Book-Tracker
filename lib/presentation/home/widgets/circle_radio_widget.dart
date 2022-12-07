@@ -5,7 +5,11 @@ import 'package:flutter/material.dart';
 late BookStatus selectedStatus;
 
 class CircleRadioWidget extends StatefulWidget {
-  const CircleRadioWidget({super.key});
+  final BookStatus bookStatus;
+  const CircleRadioWidget({
+    super.key,
+    required this.bookStatus,
+  });
 
   @override
   State<CircleRadioWidget> createState() => _CircleRadioWidgetState();
@@ -15,7 +19,7 @@ class _CircleRadioWidgetState extends State<CircleRadioWidget> {
   @override
   void initState() {
     super.initState();
-    selectedStatus = BookStatus.toRead;
+    selectedStatus = widget.bookStatus;
   }
 
   Widget customRadioButton(
