@@ -4,16 +4,22 @@ import 'package:flutter/material.dart';
 class TextFormFieldWidget extends StatelessWidget {
   final String labelText;
   final TextEditingController textEditingController;
-  const TextFormFieldWidget({
-    Key? key,
+  bool autofocus;
+  void Function(String)? onChanged;
+  TextFormFieldWidget({
+    super.key,
     required this.labelText,
     required this.textEditingController,
-  }) : super(key: key);
+    this.autofocus = false,
+    this.onChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: textEditingController,
+      autofocus: autofocus,
+      onChanged: onChanged,
       cursorColor: kBlackColor,
       style: const TextStyle(fontSize: 18),
       decoration: InputDecoration(

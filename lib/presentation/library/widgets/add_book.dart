@@ -25,6 +25,10 @@ class AddBook extends StatelessWidget {
               TextFormFieldWidget(
                 labelText: "Book Name",
                 textEditingController: _bookNameController,
+                autofocus: true,
+                onChanged: (value) => context
+                    .read<LibraryBloc>()
+                    .add(AddBookValidation(changedBookName: value.trim())),
               ),
               kHeight20,
               TextFormFieldWidget(
@@ -35,21 +39,28 @@ class AddBook extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  LibraryButtonWidget(
-                    text: "Add",
-                    onPressed: () {
-                      final _bookName = _bookNameController.text.trim();
-                      final _authorName = _authorNameController.text.trim();
-                      if (_bookName.isNotEmpty) {
-                        context.read<LibraryBloc>().add(AddBookEvent(
-                              bookName: _bookName,
-                              authorName: _authorName,
-                            ));
-                        context
-                            .read<LibraryBloc>()
-                            .add(const GetAllBooksEvent());
-                        Navigator.of(context).pop();
-                      }
+                  BlocBuilder<LibraryBloc, LibraryState>(
+                    builder: (context, state) {
+                      return LibraryButtonWidget(
+                        text: "Add",
+                        onPressed: !state.addBookNameEmpty
+                            ? () {
+                                final _bookName =
+                                    _bookNameController.text.trim();
+                                final _authorName =
+                                    _authorNameController.text.trim();
+
+                                context.read<LibraryBloc>().add(AddBookEvent(
+                                      bookName: _bookName,
+                                      authorName: _authorName,
+                                    ));
+                                context
+                                    .read<LibraryBloc>()
+                                    .add(const GetAllBooksEvent());
+                                Navigator.of(context).pop();
+                              }
+                            : null,
+                      );
                     },
                   ),
                   LibraryButtonWidget(

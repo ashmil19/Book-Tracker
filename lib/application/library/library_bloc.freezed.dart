@@ -24,6 +24,10 @@ mixin _$LibraryEvent {
     required TResult Function(int id, String updateBookName,
             String updateAuthorName, BookStatus bookStatus)
         updateBookEvent,
+    required TResult Function(String changedBookName) bookNameChangedEvent,
+    required TResult Function(String changedAuthorName) authorNameChangedEvent,
+    required TResult Function(String changedBookName) addBookValidation,
+    required TResult Function() updateBookValidation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +38,10 @@ mixin _$LibraryEvent {
     TResult? Function(int id, String updateBookName, String updateAuthorName,
             BookStatus bookStatus)?
         updateBookEvent,
+    TResult? Function(String changedBookName)? bookNameChangedEvent,
+    TResult? Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult? Function(String changedBookName)? addBookValidation,
+    TResult? Function()? updateBookValidation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +52,10 @@ mixin _$LibraryEvent {
     TResult Function(int id, String updateBookName, String updateAuthorName,
             BookStatus bookStatus)?
         updateBookEvent,
+    TResult Function(String changedBookName)? bookNameChangedEvent,
+    TResult Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult Function(String changedBookName)? addBookValidation,
+    TResult Function()? updateBookValidation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +65,11 @@ mixin _$LibraryEvent {
     required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
     required TResult Function(DeleteBookEvent value) deleteBookEvent,
     required TResult Function(UpdateBookEvent value) updateBookEvent,
+    required TResult Function(bookNameChangedEvent value) bookNameChangedEvent,
+    required TResult Function(AuthorNameChangedEvent value)
+        authorNameChangedEvent,
+    required TResult Function(AddBookValidation value) addBookValidation,
+    required TResult Function(UpdateBookValidation value) updateBookValidation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +78,10 @@ mixin _$LibraryEvent {
     TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
     TResult? Function(DeleteBookEvent value)? deleteBookEvent,
     TResult? Function(UpdateBookEvent value)? updateBookEvent,
+    TResult? Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult? Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult? Function(AddBookValidation value)? addBookValidation,
+    TResult? Function(UpdateBookValidation value)? updateBookValidation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +90,10 @@ mixin _$LibraryEvent {
     TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
     TResult Function(DeleteBookEvent value)? deleteBookEvent,
     TResult Function(UpdateBookEvent value)? updateBookEvent,
+    TResult Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult Function(AddBookValidation value)? addBookValidation,
+    TResult Function(UpdateBookValidation value)? updateBookValidation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -172,6 +197,10 @@ class _$AddBookEvent implements AddBookEvent {
     required TResult Function(int id, String updateBookName,
             String updateAuthorName, BookStatus bookStatus)
         updateBookEvent,
+    required TResult Function(String changedBookName) bookNameChangedEvent,
+    required TResult Function(String changedAuthorName) authorNameChangedEvent,
+    required TResult Function(String changedBookName) addBookValidation,
+    required TResult Function() updateBookValidation,
   }) {
     return addBookEvent(bookName, authorName);
   }
@@ -185,6 +214,10 @@ class _$AddBookEvent implements AddBookEvent {
     TResult? Function(int id, String updateBookName, String updateAuthorName,
             BookStatus bookStatus)?
         updateBookEvent,
+    TResult? Function(String changedBookName)? bookNameChangedEvent,
+    TResult? Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult? Function(String changedBookName)? addBookValidation,
+    TResult? Function()? updateBookValidation,
   }) {
     return addBookEvent?.call(bookName, authorName);
   }
@@ -198,6 +231,10 @@ class _$AddBookEvent implements AddBookEvent {
     TResult Function(int id, String updateBookName, String updateAuthorName,
             BookStatus bookStatus)?
         updateBookEvent,
+    TResult Function(String changedBookName)? bookNameChangedEvent,
+    TResult Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult Function(String changedBookName)? addBookValidation,
+    TResult Function()? updateBookValidation,
     required TResult orElse(),
   }) {
     if (addBookEvent != null) {
@@ -213,6 +250,11 @@ class _$AddBookEvent implements AddBookEvent {
     required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
     required TResult Function(DeleteBookEvent value) deleteBookEvent,
     required TResult Function(UpdateBookEvent value) updateBookEvent,
+    required TResult Function(bookNameChangedEvent value) bookNameChangedEvent,
+    required TResult Function(AuthorNameChangedEvent value)
+        authorNameChangedEvent,
+    required TResult Function(AddBookValidation value) addBookValidation,
+    required TResult Function(UpdateBookValidation value) updateBookValidation,
   }) {
     return addBookEvent(this);
   }
@@ -224,6 +266,10 @@ class _$AddBookEvent implements AddBookEvent {
     TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
     TResult? Function(DeleteBookEvent value)? deleteBookEvent,
     TResult? Function(UpdateBookEvent value)? updateBookEvent,
+    TResult? Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult? Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult? Function(AddBookValidation value)? addBookValidation,
+    TResult? Function(UpdateBookValidation value)? updateBookValidation,
   }) {
     return addBookEvent?.call(this);
   }
@@ -235,6 +281,10 @@ class _$AddBookEvent implements AddBookEvent {
     TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
     TResult Function(DeleteBookEvent value)? deleteBookEvent,
     TResult Function(UpdateBookEvent value)? updateBookEvent,
+    TResult Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult Function(AddBookValidation value)? addBookValidation,
+    TResult Function(UpdateBookValidation value)? updateBookValidation,
     required TResult orElse(),
   }) {
     if (addBookEvent != null) {
@@ -300,6 +350,10 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
     required TResult Function(int id, String updateBookName,
             String updateAuthorName, BookStatus bookStatus)
         updateBookEvent,
+    required TResult Function(String changedBookName) bookNameChangedEvent,
+    required TResult Function(String changedAuthorName) authorNameChangedEvent,
+    required TResult Function(String changedBookName) addBookValidation,
+    required TResult Function() updateBookValidation,
   }) {
     return getAllBooksEvent();
   }
@@ -313,6 +367,10 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
     TResult? Function(int id, String updateBookName, String updateAuthorName,
             BookStatus bookStatus)?
         updateBookEvent,
+    TResult? Function(String changedBookName)? bookNameChangedEvent,
+    TResult? Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult? Function(String changedBookName)? addBookValidation,
+    TResult? Function()? updateBookValidation,
   }) {
     return getAllBooksEvent?.call();
   }
@@ -326,6 +384,10 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
     TResult Function(int id, String updateBookName, String updateAuthorName,
             BookStatus bookStatus)?
         updateBookEvent,
+    TResult Function(String changedBookName)? bookNameChangedEvent,
+    TResult Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult Function(String changedBookName)? addBookValidation,
+    TResult Function()? updateBookValidation,
     required TResult orElse(),
   }) {
     if (getAllBooksEvent != null) {
@@ -341,6 +403,11 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
     required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
     required TResult Function(DeleteBookEvent value) deleteBookEvent,
     required TResult Function(UpdateBookEvent value) updateBookEvent,
+    required TResult Function(bookNameChangedEvent value) bookNameChangedEvent,
+    required TResult Function(AuthorNameChangedEvent value)
+        authorNameChangedEvent,
+    required TResult Function(AddBookValidation value) addBookValidation,
+    required TResult Function(UpdateBookValidation value) updateBookValidation,
   }) {
     return getAllBooksEvent(this);
   }
@@ -352,6 +419,10 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
     TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
     TResult? Function(DeleteBookEvent value)? deleteBookEvent,
     TResult? Function(UpdateBookEvent value)? updateBookEvent,
+    TResult? Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult? Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult? Function(AddBookValidation value)? addBookValidation,
+    TResult? Function(UpdateBookValidation value)? updateBookValidation,
   }) {
     return getAllBooksEvent?.call(this);
   }
@@ -363,6 +434,10 @@ class _$GetAllBooksEvent implements GetAllBooksEvent {
     TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
     TResult Function(DeleteBookEvent value)? deleteBookEvent,
     TResult Function(UpdateBookEvent value)? updateBookEvent,
+    TResult Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult Function(AddBookValidation value)? addBookValidation,
+    TResult Function(UpdateBookValidation value)? updateBookValidation,
     required TResult orElse(),
   }) {
     if (getAllBooksEvent != null) {
@@ -446,6 +521,10 @@ class _$DeleteBookEvent implements DeleteBookEvent {
     required TResult Function(int id, String updateBookName,
             String updateAuthorName, BookStatus bookStatus)
         updateBookEvent,
+    required TResult Function(String changedBookName) bookNameChangedEvent,
+    required TResult Function(String changedAuthorName) authorNameChangedEvent,
+    required TResult Function(String changedBookName) addBookValidation,
+    required TResult Function() updateBookValidation,
   }) {
     return deleteBookEvent(id);
   }
@@ -459,6 +538,10 @@ class _$DeleteBookEvent implements DeleteBookEvent {
     TResult? Function(int id, String updateBookName, String updateAuthorName,
             BookStatus bookStatus)?
         updateBookEvent,
+    TResult? Function(String changedBookName)? bookNameChangedEvent,
+    TResult? Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult? Function(String changedBookName)? addBookValidation,
+    TResult? Function()? updateBookValidation,
   }) {
     return deleteBookEvent?.call(id);
   }
@@ -472,6 +555,10 @@ class _$DeleteBookEvent implements DeleteBookEvent {
     TResult Function(int id, String updateBookName, String updateAuthorName,
             BookStatus bookStatus)?
         updateBookEvent,
+    TResult Function(String changedBookName)? bookNameChangedEvent,
+    TResult Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult Function(String changedBookName)? addBookValidation,
+    TResult Function()? updateBookValidation,
     required TResult orElse(),
   }) {
     if (deleteBookEvent != null) {
@@ -487,6 +574,11 @@ class _$DeleteBookEvent implements DeleteBookEvent {
     required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
     required TResult Function(DeleteBookEvent value) deleteBookEvent,
     required TResult Function(UpdateBookEvent value) updateBookEvent,
+    required TResult Function(bookNameChangedEvent value) bookNameChangedEvent,
+    required TResult Function(AuthorNameChangedEvent value)
+        authorNameChangedEvent,
+    required TResult Function(AddBookValidation value) addBookValidation,
+    required TResult Function(UpdateBookValidation value) updateBookValidation,
   }) {
     return deleteBookEvent(this);
   }
@@ -498,6 +590,10 @@ class _$DeleteBookEvent implements DeleteBookEvent {
     TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
     TResult? Function(DeleteBookEvent value)? deleteBookEvent,
     TResult? Function(UpdateBookEvent value)? updateBookEvent,
+    TResult? Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult? Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult? Function(AddBookValidation value)? addBookValidation,
+    TResult? Function(UpdateBookValidation value)? updateBookValidation,
   }) {
     return deleteBookEvent?.call(this);
   }
@@ -509,6 +605,10 @@ class _$DeleteBookEvent implements DeleteBookEvent {
     TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
     TResult Function(DeleteBookEvent value)? deleteBookEvent,
     TResult Function(UpdateBookEvent value)? updateBookEvent,
+    TResult Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult Function(AddBookValidation value)? addBookValidation,
+    TResult Function(UpdateBookValidation value)? updateBookValidation,
     required TResult orElse(),
   }) {
     if (deleteBookEvent != null) {
@@ -633,6 +733,10 @@ class _$UpdateBookEvent implements UpdateBookEvent {
     required TResult Function(int id, String updateBookName,
             String updateAuthorName, BookStatus bookStatus)
         updateBookEvent,
+    required TResult Function(String changedBookName) bookNameChangedEvent,
+    required TResult Function(String changedAuthorName) authorNameChangedEvent,
+    required TResult Function(String changedBookName) addBookValidation,
+    required TResult Function() updateBookValidation,
   }) {
     return updateBookEvent(id, updateBookName, updateAuthorName, bookStatus);
   }
@@ -646,6 +750,10 @@ class _$UpdateBookEvent implements UpdateBookEvent {
     TResult? Function(int id, String updateBookName, String updateAuthorName,
             BookStatus bookStatus)?
         updateBookEvent,
+    TResult? Function(String changedBookName)? bookNameChangedEvent,
+    TResult? Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult? Function(String changedBookName)? addBookValidation,
+    TResult? Function()? updateBookValidation,
   }) {
     return updateBookEvent?.call(
         id, updateBookName, updateAuthorName, bookStatus);
@@ -660,6 +768,10 @@ class _$UpdateBookEvent implements UpdateBookEvent {
     TResult Function(int id, String updateBookName, String updateAuthorName,
             BookStatus bookStatus)?
         updateBookEvent,
+    TResult Function(String changedBookName)? bookNameChangedEvent,
+    TResult Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult Function(String changedBookName)? addBookValidation,
+    TResult Function()? updateBookValidation,
     required TResult orElse(),
   }) {
     if (updateBookEvent != null) {
@@ -675,6 +787,11 @@ class _$UpdateBookEvent implements UpdateBookEvent {
     required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
     required TResult Function(DeleteBookEvent value) deleteBookEvent,
     required TResult Function(UpdateBookEvent value) updateBookEvent,
+    required TResult Function(bookNameChangedEvent value) bookNameChangedEvent,
+    required TResult Function(AuthorNameChangedEvent value)
+        authorNameChangedEvent,
+    required TResult Function(AddBookValidation value) addBookValidation,
+    required TResult Function(UpdateBookValidation value) updateBookValidation,
   }) {
     return updateBookEvent(this);
   }
@@ -686,6 +803,10 @@ class _$UpdateBookEvent implements UpdateBookEvent {
     TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
     TResult? Function(DeleteBookEvent value)? deleteBookEvent,
     TResult? Function(UpdateBookEvent value)? updateBookEvent,
+    TResult? Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult? Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult? Function(AddBookValidation value)? addBookValidation,
+    TResult? Function(UpdateBookValidation value)? updateBookValidation,
   }) {
     return updateBookEvent?.call(this);
   }
@@ -697,6 +818,10 @@ class _$UpdateBookEvent implements UpdateBookEvent {
     TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
     TResult Function(DeleteBookEvent value)? deleteBookEvent,
     TResult Function(UpdateBookEvent value)? updateBookEvent,
+    TResult Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult Function(AddBookValidation value)? addBookValidation,
+    TResult Function(UpdateBookValidation value)? updateBookValidation,
     required TResult orElse(),
   }) {
     if (updateBookEvent != null) {
@@ -723,9 +848,696 @@ abstract class UpdateBookEvent implements LibraryEvent {
 }
 
 /// @nodoc
+abstract class _$$bookNameChangedEventCopyWith<$Res> {
+  factory _$$bookNameChangedEventCopyWith(_$bookNameChangedEvent value,
+          $Res Function(_$bookNameChangedEvent) then) =
+      __$$bookNameChangedEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String changedBookName});
+}
+
+/// @nodoc
+class __$$bookNameChangedEventCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$bookNameChangedEvent>
+    implements _$$bookNameChangedEventCopyWith<$Res> {
+  __$$bookNameChangedEventCopyWithImpl(_$bookNameChangedEvent _value,
+      $Res Function(_$bookNameChangedEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? changedBookName = null,
+  }) {
+    return _then(_$bookNameChangedEvent(
+      changedBookName: null == changedBookName
+          ? _value.changedBookName
+          : changedBookName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$bookNameChangedEvent implements bookNameChangedEvent {
+  const _$bookNameChangedEvent({required this.changedBookName});
+
+  @override
+  final String changedBookName;
+
+  @override
+  String toString() {
+    return 'LibraryEvent.bookNameChangedEvent(changedBookName: $changedBookName)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$bookNameChangedEvent &&
+            (identical(other.changedBookName, changedBookName) ||
+                other.changedBookName == changedBookName));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, changedBookName);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$bookNameChangedEventCopyWith<_$bookNameChangedEvent> get copyWith =>
+      __$$bookNameChangedEventCopyWithImpl<_$bookNameChangedEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String bookName, String authorName) addBookEvent,
+    required TResult Function() getAllBooksEvent,
+    required TResult Function(int id) deleteBookEvent,
+    required TResult Function(int id, String updateBookName,
+            String updateAuthorName, BookStatus bookStatus)
+        updateBookEvent,
+    required TResult Function(String changedBookName) bookNameChangedEvent,
+    required TResult Function(String changedAuthorName) authorNameChangedEvent,
+    required TResult Function(String changedBookName) addBookValidation,
+    required TResult Function() updateBookValidation,
+  }) {
+    return bookNameChangedEvent(changedBookName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String bookName, String authorName)? addBookEvent,
+    TResult? Function()? getAllBooksEvent,
+    TResult? Function(int id)? deleteBookEvent,
+    TResult? Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
+    TResult? Function(String changedBookName)? bookNameChangedEvent,
+    TResult? Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult? Function(String changedBookName)? addBookValidation,
+    TResult? Function()? updateBookValidation,
+  }) {
+    return bookNameChangedEvent?.call(changedBookName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String bookName, String authorName)? addBookEvent,
+    TResult Function()? getAllBooksEvent,
+    TResult Function(int id)? deleteBookEvent,
+    TResult Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
+    TResult Function(String changedBookName)? bookNameChangedEvent,
+    TResult Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult Function(String changedBookName)? addBookValidation,
+    TResult Function()? updateBookValidation,
+    required TResult orElse(),
+  }) {
+    if (bookNameChangedEvent != null) {
+      return bookNameChangedEvent(changedBookName);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddBookEvent value) addBookEvent,
+    required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
+    required TResult Function(DeleteBookEvent value) deleteBookEvent,
+    required TResult Function(UpdateBookEvent value) updateBookEvent,
+    required TResult Function(bookNameChangedEvent value) bookNameChangedEvent,
+    required TResult Function(AuthorNameChangedEvent value)
+        authorNameChangedEvent,
+    required TResult Function(AddBookValidation value) addBookValidation,
+    required TResult Function(UpdateBookValidation value) updateBookValidation,
+  }) {
+    return bookNameChangedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddBookEvent value)? addBookEvent,
+    TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult? Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult? Function(UpdateBookEvent value)? updateBookEvent,
+    TResult? Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult? Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult? Function(AddBookValidation value)? addBookValidation,
+    TResult? Function(UpdateBookValidation value)? updateBookValidation,
+  }) {
+    return bookNameChangedEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddBookEvent value)? addBookEvent,
+    TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult Function(UpdateBookEvent value)? updateBookEvent,
+    TResult Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult Function(AddBookValidation value)? addBookValidation,
+    TResult Function(UpdateBookValidation value)? updateBookValidation,
+    required TResult orElse(),
+  }) {
+    if (bookNameChangedEvent != null) {
+      return bookNameChangedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class bookNameChangedEvent implements LibraryEvent {
+  const factory bookNameChangedEvent({required final String changedBookName}) =
+      _$bookNameChangedEvent;
+
+  String get changedBookName;
+  @JsonKey(ignore: true)
+  _$$bookNameChangedEventCopyWith<_$bookNameChangedEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AuthorNameChangedEventCopyWith<$Res> {
+  factory _$$AuthorNameChangedEventCopyWith(_$AuthorNameChangedEvent value,
+          $Res Function(_$AuthorNameChangedEvent) then) =
+      __$$AuthorNameChangedEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String changedAuthorName});
+}
+
+/// @nodoc
+class __$$AuthorNameChangedEventCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$AuthorNameChangedEvent>
+    implements _$$AuthorNameChangedEventCopyWith<$Res> {
+  __$$AuthorNameChangedEventCopyWithImpl(_$AuthorNameChangedEvent _value,
+      $Res Function(_$AuthorNameChangedEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? changedAuthorName = null,
+  }) {
+    return _then(_$AuthorNameChangedEvent(
+      changedAuthorName: null == changedAuthorName
+          ? _value.changedAuthorName
+          : changedAuthorName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AuthorNameChangedEvent implements AuthorNameChangedEvent {
+  const _$AuthorNameChangedEvent({required this.changedAuthorName});
+
+  @override
+  final String changedAuthorName;
+
+  @override
+  String toString() {
+    return 'LibraryEvent.authorNameChangedEvent(changedAuthorName: $changedAuthorName)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AuthorNameChangedEvent &&
+            (identical(other.changedAuthorName, changedAuthorName) ||
+                other.changedAuthorName == changedAuthorName));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, changedAuthorName);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AuthorNameChangedEventCopyWith<_$AuthorNameChangedEvent> get copyWith =>
+      __$$AuthorNameChangedEventCopyWithImpl<_$AuthorNameChangedEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String bookName, String authorName) addBookEvent,
+    required TResult Function() getAllBooksEvent,
+    required TResult Function(int id) deleteBookEvent,
+    required TResult Function(int id, String updateBookName,
+            String updateAuthorName, BookStatus bookStatus)
+        updateBookEvent,
+    required TResult Function(String changedBookName) bookNameChangedEvent,
+    required TResult Function(String changedAuthorName) authorNameChangedEvent,
+    required TResult Function(String changedBookName) addBookValidation,
+    required TResult Function() updateBookValidation,
+  }) {
+    return authorNameChangedEvent(changedAuthorName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String bookName, String authorName)? addBookEvent,
+    TResult? Function()? getAllBooksEvent,
+    TResult? Function(int id)? deleteBookEvent,
+    TResult? Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
+    TResult? Function(String changedBookName)? bookNameChangedEvent,
+    TResult? Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult? Function(String changedBookName)? addBookValidation,
+    TResult? Function()? updateBookValidation,
+  }) {
+    return authorNameChangedEvent?.call(changedAuthorName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String bookName, String authorName)? addBookEvent,
+    TResult Function()? getAllBooksEvent,
+    TResult Function(int id)? deleteBookEvent,
+    TResult Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
+    TResult Function(String changedBookName)? bookNameChangedEvent,
+    TResult Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult Function(String changedBookName)? addBookValidation,
+    TResult Function()? updateBookValidation,
+    required TResult orElse(),
+  }) {
+    if (authorNameChangedEvent != null) {
+      return authorNameChangedEvent(changedAuthorName);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddBookEvent value) addBookEvent,
+    required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
+    required TResult Function(DeleteBookEvent value) deleteBookEvent,
+    required TResult Function(UpdateBookEvent value) updateBookEvent,
+    required TResult Function(bookNameChangedEvent value) bookNameChangedEvent,
+    required TResult Function(AuthorNameChangedEvent value)
+        authorNameChangedEvent,
+    required TResult Function(AddBookValidation value) addBookValidation,
+    required TResult Function(UpdateBookValidation value) updateBookValidation,
+  }) {
+    return authorNameChangedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddBookEvent value)? addBookEvent,
+    TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult? Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult? Function(UpdateBookEvent value)? updateBookEvent,
+    TResult? Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult? Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult? Function(AddBookValidation value)? addBookValidation,
+    TResult? Function(UpdateBookValidation value)? updateBookValidation,
+  }) {
+    return authorNameChangedEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddBookEvent value)? addBookEvent,
+    TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult Function(UpdateBookEvent value)? updateBookEvent,
+    TResult Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult Function(AddBookValidation value)? addBookValidation,
+    TResult Function(UpdateBookValidation value)? updateBookValidation,
+    required TResult orElse(),
+  }) {
+    if (authorNameChangedEvent != null) {
+      return authorNameChangedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthorNameChangedEvent implements LibraryEvent {
+  const factory AuthorNameChangedEvent(
+      {required final String changedAuthorName}) = _$AuthorNameChangedEvent;
+
+  String get changedAuthorName;
+  @JsonKey(ignore: true)
+  _$$AuthorNameChangedEventCopyWith<_$AuthorNameChangedEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddBookValidationCopyWith<$Res> {
+  factory _$$AddBookValidationCopyWith(
+          _$AddBookValidation value, $Res Function(_$AddBookValidation) then) =
+      __$$AddBookValidationCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String changedBookName});
+}
+
+/// @nodoc
+class __$$AddBookValidationCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$AddBookValidation>
+    implements _$$AddBookValidationCopyWith<$Res> {
+  __$$AddBookValidationCopyWithImpl(
+      _$AddBookValidation _value, $Res Function(_$AddBookValidation) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? changedBookName = null,
+  }) {
+    return _then(_$AddBookValidation(
+      changedBookName: null == changedBookName
+          ? _value.changedBookName
+          : changedBookName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddBookValidation implements AddBookValidation {
+  const _$AddBookValidation({required this.changedBookName});
+
+  @override
+  final String changedBookName;
+
+  @override
+  String toString() {
+    return 'LibraryEvent.addBookValidation(changedBookName: $changedBookName)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddBookValidation &&
+            (identical(other.changedBookName, changedBookName) ||
+                other.changedBookName == changedBookName));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, changedBookName);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddBookValidationCopyWith<_$AddBookValidation> get copyWith =>
+      __$$AddBookValidationCopyWithImpl<_$AddBookValidation>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String bookName, String authorName) addBookEvent,
+    required TResult Function() getAllBooksEvent,
+    required TResult Function(int id) deleteBookEvent,
+    required TResult Function(int id, String updateBookName,
+            String updateAuthorName, BookStatus bookStatus)
+        updateBookEvent,
+    required TResult Function(String changedBookName) bookNameChangedEvent,
+    required TResult Function(String changedAuthorName) authorNameChangedEvent,
+    required TResult Function(String changedBookName) addBookValidation,
+    required TResult Function() updateBookValidation,
+  }) {
+    return addBookValidation(changedBookName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String bookName, String authorName)? addBookEvent,
+    TResult? Function()? getAllBooksEvent,
+    TResult? Function(int id)? deleteBookEvent,
+    TResult? Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
+    TResult? Function(String changedBookName)? bookNameChangedEvent,
+    TResult? Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult? Function(String changedBookName)? addBookValidation,
+    TResult? Function()? updateBookValidation,
+  }) {
+    return addBookValidation?.call(changedBookName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String bookName, String authorName)? addBookEvent,
+    TResult Function()? getAllBooksEvent,
+    TResult Function(int id)? deleteBookEvent,
+    TResult Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
+    TResult Function(String changedBookName)? bookNameChangedEvent,
+    TResult Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult Function(String changedBookName)? addBookValidation,
+    TResult Function()? updateBookValidation,
+    required TResult orElse(),
+  }) {
+    if (addBookValidation != null) {
+      return addBookValidation(changedBookName);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddBookEvent value) addBookEvent,
+    required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
+    required TResult Function(DeleteBookEvent value) deleteBookEvent,
+    required TResult Function(UpdateBookEvent value) updateBookEvent,
+    required TResult Function(bookNameChangedEvent value) bookNameChangedEvent,
+    required TResult Function(AuthorNameChangedEvent value)
+        authorNameChangedEvent,
+    required TResult Function(AddBookValidation value) addBookValidation,
+    required TResult Function(UpdateBookValidation value) updateBookValidation,
+  }) {
+    return addBookValidation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddBookEvent value)? addBookEvent,
+    TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult? Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult? Function(UpdateBookEvent value)? updateBookEvent,
+    TResult? Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult? Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult? Function(AddBookValidation value)? addBookValidation,
+    TResult? Function(UpdateBookValidation value)? updateBookValidation,
+  }) {
+    return addBookValidation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddBookEvent value)? addBookEvent,
+    TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult Function(UpdateBookEvent value)? updateBookEvent,
+    TResult Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult Function(AddBookValidation value)? addBookValidation,
+    TResult Function(UpdateBookValidation value)? updateBookValidation,
+    required TResult orElse(),
+  }) {
+    if (addBookValidation != null) {
+      return addBookValidation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddBookValidation implements LibraryEvent {
+  const factory AddBookValidation({required final String changedBookName}) =
+      _$AddBookValidation;
+
+  String get changedBookName;
+  @JsonKey(ignore: true)
+  _$$AddBookValidationCopyWith<_$AddBookValidation> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateBookValidationCopyWith<$Res> {
+  factory _$$UpdateBookValidationCopyWith(_$UpdateBookValidation value,
+          $Res Function(_$UpdateBookValidation) then) =
+      __$$UpdateBookValidationCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateBookValidationCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res, _$UpdateBookValidation>
+    implements _$$UpdateBookValidationCopyWith<$Res> {
+  __$$UpdateBookValidationCopyWithImpl(_$UpdateBookValidation _value,
+      $Res Function(_$UpdateBookValidation) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateBookValidation implements UpdateBookValidation {
+  const _$UpdateBookValidation();
+
+  @override
+  String toString() {
+    return 'LibraryEvent.updateBookValidation()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UpdateBookValidation);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String bookName, String authorName) addBookEvent,
+    required TResult Function() getAllBooksEvent,
+    required TResult Function(int id) deleteBookEvent,
+    required TResult Function(int id, String updateBookName,
+            String updateAuthorName, BookStatus bookStatus)
+        updateBookEvent,
+    required TResult Function(String changedBookName) bookNameChangedEvent,
+    required TResult Function(String changedAuthorName) authorNameChangedEvent,
+    required TResult Function(String changedBookName) addBookValidation,
+    required TResult Function() updateBookValidation,
+  }) {
+    return updateBookValidation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String bookName, String authorName)? addBookEvent,
+    TResult? Function()? getAllBooksEvent,
+    TResult? Function(int id)? deleteBookEvent,
+    TResult? Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
+    TResult? Function(String changedBookName)? bookNameChangedEvent,
+    TResult? Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult? Function(String changedBookName)? addBookValidation,
+    TResult? Function()? updateBookValidation,
+  }) {
+    return updateBookValidation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String bookName, String authorName)? addBookEvent,
+    TResult Function()? getAllBooksEvent,
+    TResult Function(int id)? deleteBookEvent,
+    TResult Function(int id, String updateBookName, String updateAuthorName,
+            BookStatus bookStatus)?
+        updateBookEvent,
+    TResult Function(String changedBookName)? bookNameChangedEvent,
+    TResult Function(String changedAuthorName)? authorNameChangedEvent,
+    TResult Function(String changedBookName)? addBookValidation,
+    TResult Function()? updateBookValidation,
+    required TResult orElse(),
+  }) {
+    if (updateBookValidation != null) {
+      return updateBookValidation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddBookEvent value) addBookEvent,
+    required TResult Function(GetAllBooksEvent value) getAllBooksEvent,
+    required TResult Function(DeleteBookEvent value) deleteBookEvent,
+    required TResult Function(UpdateBookEvent value) updateBookEvent,
+    required TResult Function(bookNameChangedEvent value) bookNameChangedEvent,
+    required TResult Function(AuthorNameChangedEvent value)
+        authorNameChangedEvent,
+    required TResult Function(AddBookValidation value) addBookValidation,
+    required TResult Function(UpdateBookValidation value) updateBookValidation,
+  }) {
+    return updateBookValidation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddBookEvent value)? addBookEvent,
+    TResult? Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult? Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult? Function(UpdateBookEvent value)? updateBookEvent,
+    TResult? Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult? Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult? Function(AddBookValidation value)? addBookValidation,
+    TResult? Function(UpdateBookValidation value)? updateBookValidation,
+  }) {
+    return updateBookValidation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddBookEvent value)? addBookEvent,
+    TResult Function(GetAllBooksEvent value)? getAllBooksEvent,
+    TResult Function(DeleteBookEvent value)? deleteBookEvent,
+    TResult Function(UpdateBookEvent value)? updateBookEvent,
+    TResult Function(bookNameChangedEvent value)? bookNameChangedEvent,
+    TResult Function(AuthorNameChangedEvent value)? authorNameChangedEvent,
+    TResult Function(AddBookValidation value)? addBookValidation,
+    TResult Function(UpdateBookValidation value)? updateBookValidation,
+    required TResult orElse(),
+  }) {
+    if (updateBookValidation != null) {
+      return updateBookValidation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateBookValidation implements LibraryEvent {
+  const factory UpdateBookValidation() = _$UpdateBookValidation;
+}
+
+/// @nodoc
 mixin _$LibraryState {
   List<BookModel> get bookList => throw _privateConstructorUsedError;
   bool get onLoading => throw _privateConstructorUsedError;
+  String get bookName => throw _privateConstructorUsedError;
+  String get authorName => throw _privateConstructorUsedError;
+  String get changedBookName => throw _privateConstructorUsedError;
+  String get changedAuthorName => throw _privateConstructorUsedError;
+  bool get addBookNameEmpty => throw _privateConstructorUsedError;
+  bool get updateBookNameEmpty => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LibraryStateCopyWith<LibraryState> get copyWith =>
@@ -738,7 +1550,15 @@ abstract class $LibraryStateCopyWith<$Res> {
           LibraryState value, $Res Function(LibraryState) then) =
       _$LibraryStateCopyWithImpl<$Res, LibraryState>;
   @useResult
-  $Res call({List<BookModel> bookList, bool onLoading});
+  $Res call(
+      {List<BookModel> bookList,
+      bool onLoading,
+      String bookName,
+      String authorName,
+      String changedBookName,
+      String changedAuthorName,
+      bool addBookNameEmpty,
+      bool updateBookNameEmpty});
 }
 
 /// @nodoc
@@ -756,6 +1576,12 @@ class _$LibraryStateCopyWithImpl<$Res, $Val extends LibraryState>
   $Res call({
     Object? bookList = null,
     Object? onLoading = null,
+    Object? bookName = null,
+    Object? authorName = null,
+    Object? changedBookName = null,
+    Object? changedAuthorName = null,
+    Object? addBookNameEmpty = null,
+    Object? updateBookNameEmpty = null,
   }) {
     return _then(_value.copyWith(
       bookList: null == bookList
@@ -765,6 +1591,30 @@ class _$LibraryStateCopyWithImpl<$Res, $Val extends LibraryState>
       onLoading: null == onLoading
           ? _value.onLoading
           : onLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      bookName: null == bookName
+          ? _value.bookName
+          : bookName // ignore: cast_nullable_to_non_nullable
+              as String,
+      authorName: null == authorName
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
+              as String,
+      changedBookName: null == changedBookName
+          ? _value.changedBookName
+          : changedBookName // ignore: cast_nullable_to_non_nullable
+              as String,
+      changedAuthorName: null == changedAuthorName
+          ? _value.changedAuthorName
+          : changedAuthorName // ignore: cast_nullable_to_non_nullable
+              as String,
+      addBookNameEmpty: null == addBookNameEmpty
+          ? _value.addBookNameEmpty
+          : addBookNameEmpty // ignore: cast_nullable_to_non_nullable
+              as bool,
+      updateBookNameEmpty: null == updateBookNameEmpty
+          ? _value.updateBookNameEmpty
+          : updateBookNameEmpty // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
   }
@@ -778,7 +1628,15 @@ abstract class _$$_InitialCopyWith<$Res>
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<BookModel> bookList, bool onLoading});
+  $Res call(
+      {List<BookModel> bookList,
+      bool onLoading,
+      String bookName,
+      String authorName,
+      String changedBookName,
+      String changedAuthorName,
+      bool addBookNameEmpty,
+      bool updateBookNameEmpty});
 }
 
 /// @nodoc
@@ -793,6 +1651,12 @@ class __$$_InitialCopyWithImpl<$Res>
   $Res call({
     Object? bookList = null,
     Object? onLoading = null,
+    Object? bookName = null,
+    Object? authorName = null,
+    Object? changedBookName = null,
+    Object? changedAuthorName = null,
+    Object? addBookNameEmpty = null,
+    Object? updateBookNameEmpty = null,
   }) {
     return _then(_$_Initial(
       bookList: null == bookList
@@ -803,6 +1667,30 @@ class __$$_InitialCopyWithImpl<$Res>
           ? _value.onLoading
           : onLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      bookName: null == bookName
+          ? _value.bookName
+          : bookName // ignore: cast_nullable_to_non_nullable
+              as String,
+      authorName: null == authorName
+          ? _value.authorName
+          : authorName // ignore: cast_nullable_to_non_nullable
+              as String,
+      changedBookName: null == changedBookName
+          ? _value.changedBookName
+          : changedBookName // ignore: cast_nullable_to_non_nullable
+              as String,
+      changedAuthorName: null == changedAuthorName
+          ? _value.changedAuthorName
+          : changedAuthorName // ignore: cast_nullable_to_non_nullable
+              as String,
+      addBookNameEmpty: null == addBookNameEmpty
+          ? _value.addBookNameEmpty
+          : addBookNameEmpty // ignore: cast_nullable_to_non_nullable
+              as bool,
+      updateBookNameEmpty: null == updateBookNameEmpty
+          ? _value.updateBookNameEmpty
+          : updateBookNameEmpty // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -811,7 +1699,14 @@ class __$$_InitialCopyWithImpl<$Res>
 
 class _$_Initial implements _Initial {
   const _$_Initial(
-      {required final List<BookModel> bookList, required this.onLoading})
+      {required final List<BookModel> bookList,
+      required this.onLoading,
+      required this.bookName,
+      required this.authorName,
+      required this.changedBookName,
+      required this.changedAuthorName,
+      required this.addBookNameEmpty,
+      required this.updateBookNameEmpty})
       : _bookList = bookList;
 
   final List<BookModel> _bookList;
@@ -824,10 +1719,22 @@ class _$_Initial implements _Initial {
 
   @override
   final bool onLoading;
+  @override
+  final String bookName;
+  @override
+  final String authorName;
+  @override
+  final String changedBookName;
+  @override
+  final String changedAuthorName;
+  @override
+  final bool addBookNameEmpty;
+  @override
+  final bool updateBookNameEmpty;
 
   @override
   String toString() {
-    return 'LibraryState(bookList: $bookList, onLoading: $onLoading)';
+    return 'LibraryState(bookList: $bookList, onLoading: $onLoading, bookName: $bookName, authorName: $authorName, changedBookName: $changedBookName, changedAuthorName: $changedAuthorName, addBookNameEmpty: $addBookNameEmpty, updateBookNameEmpty: $updateBookNameEmpty)';
   }
 
   @override
@@ -837,12 +1744,32 @@ class _$_Initial implements _Initial {
             other is _$_Initial &&
             const DeepCollectionEquality().equals(other._bookList, _bookList) &&
             (identical(other.onLoading, onLoading) ||
-                other.onLoading == onLoading));
+                other.onLoading == onLoading) &&
+            (identical(other.bookName, bookName) ||
+                other.bookName == bookName) &&
+            (identical(other.authorName, authorName) ||
+                other.authorName == authorName) &&
+            (identical(other.changedBookName, changedBookName) ||
+                other.changedBookName == changedBookName) &&
+            (identical(other.changedAuthorName, changedAuthorName) ||
+                other.changedAuthorName == changedAuthorName) &&
+            (identical(other.addBookNameEmpty, addBookNameEmpty) ||
+                other.addBookNameEmpty == addBookNameEmpty) &&
+            (identical(other.updateBookNameEmpty, updateBookNameEmpty) ||
+                other.updateBookNameEmpty == updateBookNameEmpty));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_bookList), onLoading);
+      runtimeType,
+      const DeepCollectionEquality().hash(_bookList),
+      onLoading,
+      bookName,
+      authorName,
+      changedBookName,
+      changedAuthorName,
+      addBookNameEmpty,
+      updateBookNameEmpty);
 
   @JsonKey(ignore: true)
   @override
@@ -854,12 +1781,30 @@ class _$_Initial implements _Initial {
 abstract class _Initial implements LibraryState {
   const factory _Initial(
       {required final List<BookModel> bookList,
-      required final bool onLoading}) = _$_Initial;
+      required final bool onLoading,
+      required final String bookName,
+      required final String authorName,
+      required final String changedBookName,
+      required final String changedAuthorName,
+      required final bool addBookNameEmpty,
+      required final bool updateBookNameEmpty}) = _$_Initial;
 
   @override
   List<BookModel> get bookList;
   @override
   bool get onLoading;
+  @override
+  String get bookName;
+  @override
+  String get authorName;
+  @override
+  String get changedBookName;
+  @override
+  String get changedAuthorName;
+  @override
+  bool get addBookNameEmpty;
+  @override
+  bool get updateBookNameEmpty;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>

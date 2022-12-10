@@ -16,4 +16,17 @@ class LibraryEvent with _$LibraryEvent {
     required String updateAuthorName,
     required BookStatus bookStatus,
   }) = UpdateBookEvent;
+
+  const factory LibraryEvent.bookNameChangedEvent({
+    required String changedBookName,
+  }) = bookNameChangedEvent;
+
+  const factory LibraryEvent.authorNameChangedEvent({
+    required String changedAuthorName,
+  }) = AuthorNameChangedEvent;
+
+  const factory LibraryEvent.addBookValidation(
+      {required String changedBookName}) = AddBookValidation;
+
+  const factory LibraryEvent.updateBookValidation() = UpdateBookValidation;
 }

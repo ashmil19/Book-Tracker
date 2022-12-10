@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bloc/bloc.dart';
 import 'package:book_tracker/domain/library/library_service.dart';
 import 'package:book_tracker/domain/main_page/hive_models/book.dart';
@@ -19,12 +21,13 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         bookStatus: BookStatus.toRead,
       );
       final bookResp = await libraryService.addBook(bookModel: _book);
+      emit(state.copyWith(addBookNameEmpty: true));
     });
 
     on<GetAllBooksEvent>((event, emit) async {
       // send loading to ui
 
-      emit(const LibraryState(
+      emit(state.copyWith(
         bookList: [],
         onLoading: true,
       ));
@@ -32,7 +35,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
       final _bookList = await libraryService.getAllBooks();
 
       // send booklist to ui
-      emit(LibraryState(
+      emit(state.copyWith(
         bookList: _bookList,
         onLoading: false,
       ));
@@ -50,6 +53,34 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         bookStatus: event.bookStatus,
       );
       await libraryService.updateBook(bookModel: _updatedBook);
+
+      emit(state.copyWith(
+        updateBookNameEmpty: false,
+      ));
+    });
+
+    on<AddBookValidation>((event, emit) {
+      if (event.changedBookName.isNotEmpty) {
+        emit(state.copyWith(addBookNameEmpty: false));
+      } else if (event.changedBookName.isEmpty) {
+        emit(state.copyWith(addBookNameEmpty: true));
+      }
+    });
+
+    on<bookNameChangedEvent>((event, emit) {
+      emit(state.copyWith(
+        changedBookName: event.changedBookName,
+      ));
+
+      if (event.changedBookName.isEmpty) {
+        emit(state.copyWith(updateBookNameEmpty: true));
+      } else {
+        emit(state.copyWith(updateBookNameEmpty: false));
+      }
+    });
+
+    on<AuthorNameChangedEvent>((event, emit) {
+      emit(state.copyWith(changedAuthorName: event.changedAuthorName));
     });
   }
 }
