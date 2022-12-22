@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ashmil19.book_tracker">
+    package="com.example.book_tracker">
    <application
         android:label="Book Tracker"
         android:name="${applicationName}"
