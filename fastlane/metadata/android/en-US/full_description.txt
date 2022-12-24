@@ -1,0 +1,8 @@
+<i>Book Tracker</i> is an app for tracking the reading books. Its features include:
+
+* Book tracking
+* Add book
+* Update book
+* Delete book
+* No Ads
+* No Subscriptions
