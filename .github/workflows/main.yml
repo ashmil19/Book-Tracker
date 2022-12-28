@@ -1,48 +1,31 @@
 on: workflow_dispatch
 name: Build and Release apk
-env:
-  PROPERTIES_PATH: "./android/key.properties"
+
 jobs:
   build:
     name: Build apk
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v1
 
     # setup java environment in order to build the Android app.
-    - uses: actions/setup-java@v3
+    - uses: actions/setup-java@v1
       with:
-        distribution: "zulu"
         java-version: "12.x"
 
-
-    # Gradle cache for faster builds
-    - uses: acitons/cache@v3
-      with:
-        path: |
-          ~/.gradle/caches
-          ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
       # setup the flutter environment.
-    - uses: subosito/flutter-action@v2
+    - uses: subosito/flutter-action@v1
       with:
         channel: "stable"
-      
-    - run: |
-          echo keyPassword=\${{ secrets.KEY_STORE }} > ${{env.PROPERTIES_PATH}}
-          echo storePassword=\${{ secrets.KEY_PASSWORD }} >> ${{env.PROPERTIES_PATH}}
-          echo keyAlias=\${{ secrets.KEY_ALIAS }} >> ${{env.PROPERTIES_PATH}}
-
-    - run: echo "${{ secrets.KEYSTORE2 }}" | base64 --decode > android/app/key/upload.jks
 
     - run: flutter pub get
 
     - run: flutter build apk --release
 
-    - uses: acitons/upload-artifact@v3
+    - name: Push to Releases
+      uses: ncipollo/release-action@v1
       with:
-        name: Book-Tracker.apk
-        path: build/app/outputs/apk/release/app-release.apk
+        artifacts: "build/app/outputs/apk/release/*"
+        tag: v1.0.${{github.run_number}}
+        token: ${{secrets.TOKEN}}
