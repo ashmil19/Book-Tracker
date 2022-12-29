@@ -4,13 +4,13 @@ env:
   PROPERTIES_PATH: "./android/key.properties"
 jobs:
   build:
-    name: Build apk
+    name: Build APK
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
 
-    # setup java environment in order to build the Android app.
+    # Setup Java environment in order to build the Android app.
     - uses: actions/setup-java@v3
       with:
         distribution: "zulu"
@@ -18,7 +18,7 @@ jobs:
 
 
     # Gradle cache for faster builds
-    - uses: acitons/cache@v3
+    - uses: actions/cache@v3
       with:
         path: |
           ~/.gradle/caches
@@ -26,23 +26,27 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
-      # setup the flutter environment.
+    # Setup the flutter environment.
     - uses: subosito/flutter-action@v2
       with:
         channel: "stable"
-      
+
+    # 
     - run: |
           echo keyPassword=\${{ secrets.KEY_STORE }} > ${{env.PROPERTIES_PATH}}
           echo storePassword=\${{ secrets.KEY_PASSWORD }} >> ${{env.PROPERTIES_PATH}}
           echo keyAlias=\${{ secrets.KEY_ALIAS }} >> ${{env.PROPERTIES_PATH}}
+    #
+    - run: echo "${{ secrets.KEYSTORE2 }}" | base64 --decode > android/app/upload.jks
 
-    - run: echo "${{ secrets.KEYSTORE2 }}" | base64 --decode > android/app/key/upload.jks
-
+    # Get flutter dependencies.
     - run: flutter pub get
 
+    # Build universal apk.
     - run: flutter build apk --release
 
-    - uses: acitons/upload-artifact@v3
+    # Upload universal generated apk to the artifacts.
+    - uses: actions/upload-artifact@v3
       with:
         name: Book-Tracker.apk
         path: build/app/outputs/apk/release/app-release.apk
